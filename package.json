@@ -1,0 +1,39 @@
+{
+  "name": "ajax",
+  "version": "0.0.3",
+  "description": "ajax",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf lib dist es",
+    "build": "npm run clean && npm run build:commonjs && npm run build:es",
+    "build:commonjs": "BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:es": "BABEL_ENV=es babel src --out-dir es"
+  },
+  "files": [
+    "lib",
+    "es",
+    "src",
+    "dist",
+    "index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.nie.netease.com/sedan/ajax"
+  },
+  "author": "Tracis",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "whatwg-fetch": "^3.0.0"
+  }
+}
